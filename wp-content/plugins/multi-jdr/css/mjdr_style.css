@@ -1,0 +1,69 @@
+.mjdr-input[type="submit"] {
+
+}
+/* Style the form */
+#mjdr_slider_regForm {
+	background-color: #ffffff;
+	margin: auto;
+	padding: 40px;
+	width: 100%;
+	min-width: 300px;
+}
+
+/* Style the input fields */
+.mjdr_input[type="text"] {
+	padding: 10px;
+	width: 100%;
+	font-size: 17px;
+	font-family: Raleway;
+	border: 1px solid #aaaaaa;
+}
+/* Mark input boxes that gets an error on validation: */
+input.mjdr_slider_invalid {
+	background-color: #ffdddd;
+}
+
+/* Hide all steps by default: */
+.mjdr_slider_tab {
+	display: none;
+}
+
+/* Make circles that indicate the steps of the form: */
+.mjdr_slider_step {
+	height: 15px;
+	width: 15px;
+	margin: 0 2px;
+	background-color: #bbbbbb;
+	border: none; 
+	border-radius: 50%;
+	display: inline-block;
+	opacity: 0.5;
+}
+
+/* Mark the active step: */
+.mjdr_slider_step.active {
+	opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.mjdr_slider_step.finish {
+	background-color: #4CAF50;
+}
+
+
+.mjdr_liste_horizontale{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.mjdr_liste_horizontale li {
+    list-style-type: none;
+    text-decoration: none;
+    width:14%;
+    text-align: center;
+    float: left;
+}
+.mjdr_liste_horizontale li.mjdr_td_carac {
+    padding:10px 0;
+}
