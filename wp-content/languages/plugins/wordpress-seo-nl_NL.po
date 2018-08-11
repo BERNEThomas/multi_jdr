@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Yoast SEO - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2018-08-09 08:45:50+0000\n"
+"PO-Revision-Date: 2018-08-10 23:23:49+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -15,6 +15,10 @@ msgstr ""
 msgid "The exact-match %3$skeyword density%4$s is %1$s, which is too low; the focus keyword was found %2$d times."
 msgstr "De %3$strefwoord-dichtheid%4$s is %1$s, wat te laag is; het focustrefwoord is %2$d keer gevonden."
 
+#: languages/yoast-components.php:110
+msgid "image preview"
+msgstr "Voorbeeld van afbeelding"
+
 #: languages/yoast-components.php:38
 msgid "Copied!"
 msgstr "Gekopieerd!"
@@ -22,6 +26,10 @@ msgstr "Gekopieerd!"
 #: languages/yoast-components.php:35
 msgid "Not supported!"
 msgstr "Niet ondersteund!"
+
+#: languages/yoast-components.php:32
+msgid "Read {{a}}our article about site structure{{/a}} to learn more about how internal linking can help improve your SEO."
+msgstr "Lees {{a}}ons artikel over sitestructuur{{/a}} om meer te leren hoe intern linken je kan helpen met het verbeteren van je SEO."
 
 #: languages/yoast-components.php:29
 msgid "Once you add a bit more copy, we'll give you a list of related content here to which you could link in your post."
@@ -2485,7 +2493,7 @@ msgstr "De %1$sSEO-titel%2$s is langer dan het toonbare limiet."
 #. anchor end tag
 #: languages/yoast-seo-js.php:247
 msgid "The %1$sSEO title%2$s is too short. Use the space to add keyword variations or create compelling call-to-action copy."
-msgstr "De %1$sSEO-titel%2$sis te kort. Gebruik de ruimte om trefwoordvariaties toe te voegen of creëer een aansprekende tekst die aanzet tot actie."
+msgstr "De %1$sSEO-titel%2$s is te kort. Gebruik de ruimte om trefwoordvariaties toe te voegen of creëer een aansprekende tekst die aanzet tot actie."
 
 #. Translators: %1$s expands to a link on yoast.com, %2$s expands to the anchor
 #. end tag
