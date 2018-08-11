@@ -11,7 +11,7 @@ author URI: https://www.bernethomas.net/
 function mjdr_load_plugin_css()
 {
     $plugin_url = plugin_dir_url( __FILE__ );
-	wp_enqueue_style("mjdr_style", plugins_url("css/mjdr_style.css" , __FILE__ ));
+	wp_enqueue_style("mjdr_style", plugins_url("mjdr_style.css" , __FILE__ ));
 }
 
 class MultiJdr

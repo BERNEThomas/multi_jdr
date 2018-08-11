@@ -1,0 +1,264 @@
+    .boton {
+        width: 200px;
+        height: 50px;
+        margin:auto;
+        display: block;
+        position: relative;
+    }
+    .botontext {
+
+    }
+    .boton input {
+	    background: none;
+	    color: inherit;
+	    border: none;
+        width: 200px;
+	    padding: 0;
+	    font: inherit;
+	    cursor: pointer;
+	    outline: inherit;
+        text-transform: uppercase;
+        font-size: 12px;
+
+    }
+    .botontext {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+        text-align: center;
+        line-height: 50px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 12px;
+        text-transform: uppercase;
+    }
+    
+    .twist {
+        display: block;
+        height: 100%;
+        width: 25%;
+        position: relative;
+        float: left;
+    }
+    
+    .twist:before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: #fed5a9;
+        bottom: 100%;
+        position: absolute;
+        transform-origin: center bottom 0px; 
+        transform: matrix3d(1, 0, 0, 0, 
+                            0, 0, -1, -0.003, 
+                            0, 1, 0, 0, 
+                            0, 0, 0, 1);
+        
+-webkit-transition: all 500ms cubic-bezier(0.970, 0.000, 0.395, 0.995); 
+   -moz-transition: all 500ms cubic-bezier(0.970, 0.000, 0.395, 0.995); 
+     -o-transition: all 500ms cubic-bezier(0.970, 0.000, 0.395, 0.995); 
+        transition: all 500ms cubic-bezier(0.970, 0.000, 0.395, 0.995); /* custom */
+    }
+    
+    .twist:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        top: 100%;
+        height: 100%;
+        background: #9f7f5e;
+        transform-origin: center top 0px;
+        transform: matrix3d(1, 0, 0, 0, 
+                            0, 1, 0, 0, 
+                            0, 0, 1, -0.003, 
+                            0, -50, 0, 1);
+        
+-webkit-transition: all 500ms cubic-bezier(0.970, 0.000, 0.395, 0.995); 
+   -moz-transition: all 500ms cubic-bezier(0.970, 0.000, 0.395, 0.995); 
+     -o-transition: all 500ms cubic-bezier(0.970, 0.000, 0.395, 0.995); 
+        transition: all 500ms cubic-bezier(0.970, 0.000, 0.395, 0.995); /* custom */
+    }
+    
+    .boton:hover .twist:before {
+        background: #fff;
+        transform: matrix3d(1, 0, 0, 0, 
+                            0, 1, 0, 0, 
+                            0, 0, 1, 0.003, 
+                            0, 50, 0, 1);
+    }
+    
+    .boton:hover .twist:after {
+        background: #dedae1;
+        transform: matrix3d(1, 0, 0, 0, 
+                            0, 0, -1, 0.003, 
+                            0, 1, 0, 0, 
+                            0, 0, 0, 1);
+    }
+
+    .boton .twist:nth-of-type(1) {
+        margin-left: 0;
+    }
+    
+    .boton .twist:nth-of-type(1):before,
+    .boton .twist:nth-of-type(1):after {
+        transition-delay: 0s;
+    }
+    
+    .boton .twist:nth-of-type(2):before,
+    .boton .twist:nth-of-type(2):after {
+        transition-delay: 0.1s;
+    }
+    
+    .boton .twist:nth-of-type(3):before,
+    .boton .twist:nth-of-type(3):after {
+        transition-delay: 0.2s;
+    }
+    
+    .boton .twist:nth-of-type(4):before,
+    .boton .twist:nth-of-type(4):after {
+        transition-delay: 0.3s;
+    }
+    
+    .boton .botontext:nth-of-type(1) {
+        color: #3d3b40;
+        bottom: 100%;
+        transform-origin: center bottom 0px; 
+        transform: matrix3d(1, 0, 0, 0, 
+                            0, 0, -1, -0.003, 
+                            0, 1, 0, 0, 
+                            0, 0, 0, 1);
+        
+-webkit-transition: all 500ms cubic-bezier(0.970, 0.000, 0.395, 0.995); 
+   -moz-transition: all 500ms cubic-bezier(0.970, 0.000, 0.395, 0.995); 
+     -o-transition: all 500ms cubic-bezier(0.970, 0.000, 0.395, 0.995); 
+        transition: all 500ms cubic-bezier(0.970, 0.000, 0.395, 0.995); /* custom */
+    }
+    
+    .boton:hover .botontext:nth-of-type(1) {
+        transform: matrix3d(1, 0, 0, 0, 
+                            0, 1, 0, 0, 
+                            0, 0, 1, 0.003, 
+                            0, 50, 0, 1);
+    }
+    
+    .boton .botontext:nth-of-type(2) {
+        color: #fff;
+        top: 100%;
+        transform-origin: center top 0px;
+        transform: matrix3d(1, 0, 0, 0, 
+                            0, 1, 0, 0, 
+                            0, 0, 1, -0.003, 
+                            0, -50, 0, 1);
+        
+-webkit-transition: all 500ms cubic-bezier(0.970, 0.000, 0.395, 0.995); 
+   -moz-transition: all 500ms cubic-bezier(0.970, 0.000, 0.395, 0.995); 
+     -o-transition: all 500ms cubic-bezier(0.970, 0.000, 0.395, 0.995); 
+        transition: all 500ms cubic-bezier(0.970, 0.000, 0.395, 0.995); /* custom */
+    }
+    
+    .boton:hover .botontext:nth-of-type(2) {
+        transform: matrix3d(1, 0, 0, 0, 
+                            0, 0, -1, 0.003, 
+                            0, 1, 0, 0, 
+                            0, 0, 0, 1);
+    }
+
+
+
+/* Style the form */
+#mjdr_slider_regForm {
+	background-color: #ffffff;
+	margin: auto;
+	padding: 40px;
+	width: 100%;
+	min-width: 300px;
+}
+.box-multi_jdr {
+	color:white;
+    margin-left:auto;
+    margin-right:auto;
+    padding:30px;
+    border: 1px solid rgba(0,0,0,.2);
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    background: rgba(0, 0, 0, 0.5); 
+    -moz-box-shadow: 0 0 13px 3px rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 0 13px 3px rgba(0,0,0,.5);
+    box-shadow: 0 0 13px 3px rgba(0,0,0,.5);
+    overflow: hidden; 
+}
+.box-multi_jdr-titre1 {
+	margin:20px 0 40px 0;
+	color:white;
+}
+/* Style the input fields */
+.mjdr-input[type="text"], .mjdr-input[type="password"] {
+	width: 276px;
+	height: 48px;
+	border: 1px solid rgba(255,255,255,.4);
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box; 
+	display:block;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size:18px;
+	padding-left:20px;
+	padding-right:20px;
+	margin-bottom:20px;
+}
+/* Mark input boxes that gets an error on validation: */
+input.mjdr_slider_invalid {
+	background-color: #ffdddd;
+}
+
+/* Hide all steps by default: */
+.mjdr_slider_tab {
+	display: none;
+}
+
+/* Make circles that indicate the steps of the form: */
+.mjdr_slider_step {
+	height: 15px;
+	width: 15px;
+	margin: 0 2px;
+	background-color: #bbbbbb;
+	border: none; 
+	border-radius: 50%;
+	display: inline-block;
+	opacity: 0.5;
+}
+
+/* Mark the active step: */
+.mjdr_slider_step.active {
+	opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.mjdr_slider_step.finish {
+	background-color: #4CAF50;
+}
+
+
+.mjdr_liste_horizontale{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.mjdr_liste_horizontale li {
+    list-style-type: none;
+    text-decoration: none;
+    width:14%;
+    text-align: center;
+    float: left;
+}
+.mjdr_liste_horizontale li.mjdr_td_carac {
+    padding:10px 0;
+}

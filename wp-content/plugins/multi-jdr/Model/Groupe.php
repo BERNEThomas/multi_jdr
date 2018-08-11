@@ -63,5 +63,7 @@ class Groupe
 		global $wpdb;
 		$wpdb->delete($wpdb->prefix . "mjdr_Groupe", array( 'id' => $this->idGroupe));
 	}
+	public function currentUserHasGroupe() {
 
+	}
 }

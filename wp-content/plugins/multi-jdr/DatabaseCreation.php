@@ -23,7 +23,8 @@ class DatabaseCreation
 		$createQuery = "CREATE TABLE IF NOT EXISTS $table_name (
 			idGroupe bigint(20) UNSIGNED PRIMARY KEY AUTO_INCREMENT not null,
 			nom varchar(70) not null,
-			motDePasse varchar(40) not null
+			motDePasse varchar(40) not null,
+			upd DATETIME DEFAULT CURRENT_TIMESTAMP
 		) $charset_collate;";
 
 		require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
@@ -42,6 +43,7 @@ class DatabaseCreation
 			classe varchar(100) null,
 			race varchar(100) null,
 			traitsCaracteristiques varchar(100) null,
+			imageUri varchar(500) null,
 			age int null,
 			poids varchar(100) null,
 			taille float null,
@@ -119,6 +121,7 @@ class DatabaseCreation
 			decouverteTresors int null,
 			armesCaC int null,
 			armesADistance int null,
+			upd DATETIME DEFAULT CURRENT_TIMESTAMP,
 			FOREIGN KEY (idJoueur) REFERENCES " . $wpdb->prefix . "users(ID)
 		) $charset_collate;";
 
@@ -133,6 +136,7 @@ class DatabaseCreation
 		$createQuery = "CREATE TABLE IF NOT EXISTS $table_name (
 			idGroupe bigint(20) UNSIGNED not null,
 			idJoueur bigint(20) UNSIGNED not null,
+			upd DATETIME DEFAULT CURRENT_TIMESTAMP,
 			CONSTRAINT movie_Groupe_Joueur PRIMARY KEY (idGroupe, idJoueur),
 			CONSTRAINT FK_idGroupe FOREIGN KEY (idGroupe) REFERENCES " . $wpdb->prefix . "mjdr_Groupe(idGroupe),
 			CONSTRAINT FK_idJoueur FOREIGN KEY (idJoueur) REFERENCES " . $wpdb->prefix . "users(ID)
@@ -150,6 +154,7 @@ class DatabaseCreation
 		    idPouvoir bigint(20) UNSIGNED PRIMARY KEY AUTO_INCREMENT not null,
 		    idPersonnage bigint(20) UNSIGNED not null,
 		    valeur int null,
+			upd DATETIME DEFAULT CURRENT_TIMESTAMP,
 		    FOREIGN KEY (idPersonnage) REFERENCES " . $wpdb->prefix . "mjdr_Personnage(idPersonnage)
 		) $charset_collate;";
 
@@ -168,6 +173,7 @@ class DatabaseCreation
 		    libelle varchar(200) null,
 		    niveau int null,
 		    description varchar(200) null,
+			upd DATETIME DEFAULT CURRENT_TIMESTAMP,
 		    FOREIGN KEY (idPouvoir) REFERENCES " . $wpdb->prefix . "mjdr_Pouvoir(idPouvoir)
 		) $charset_collate;";
 
@@ -187,6 +193,7 @@ class DatabaseCreation
 		    description varchar(100) null,
 		    effet varchar(100) null,
 		    prix int null,
+			upd DATETIME DEFAULT CURRENT_TIMESTAMP,
 		    FOREIGN KEY (idPersonnage) REFERENCES " . $wpdb->prefix . "mjdr_Personnage(idPersonnage)
 		) $charset_collate;";
 
@@ -207,6 +214,7 @@ class DatabaseCreation
 		    ajoutDegats int null,
 		    etat int null,
 		    prix int null,
+			upd DATETIME DEFAULT CURRENT_TIMESTAMP,
 		    FOREIGN KEY (idPersonnage) REFERENCES " . $wpdb->prefix . "mjdr_Personnage(idPersonnage)
 		) $charset_collate;";
 
@@ -227,6 +235,7 @@ class DatabaseCreation
 		    ajoutDegats int null,
 		    etat int null,
 		    prix int null,
+			upd DATETIME DEFAULT CURRENT_TIMESTAMP,
 		    FOREIGN KEY (idPersonnage) REFERENCES " . $wpdb->prefix . "mjdr_Personnage(idPersonnage)
 		); $charset_collate;";
 
@@ -239,25 +248,14 @@ class DatabaseCreation
 		global $wpdb;
 
 		$createQuery = "
-			drop table if exists wor85_mjdr_Enregistrement;
-			drop table if exists wor85_mjdr_CompetencePouvoir;
-			drop table if exists wor85_mjdr_Pouvoir;
-			drop table if exists wor85_mjdr_Defense;
-			drop table if exists wor85_mjdr_Armement;
-			drop table if exists wor85_mjdr_Equipement;
-			drop table if exists wor85_mjdr_Groupe;
-			drop table if exists wor85_mjdr_Personnage;";
-
-			/*
-			drop table if exists " . $wpdb->prefix . "mjdr_Groupe;
-			drop table if exists " . $wpdb->prefix . "mjdr_Personnage;
-			drop table if exists " . $wpdb->prefix . "mjdr_CompetencePouvoir;
 			drop table if exists " . $wpdb->prefix . "mjdr_Enregistrement;
+			drop table if exists " . $wpdb->prefix . "mjdr_CompetencePouvoir;
 			drop table if exists " . $wpdb->prefix . "mjdr_Pouvoir;
 			drop table if exists " . $wpdb->prefix . "mjdr_Defense;
 			drop table if exists " . $wpdb->prefix . "mjdr_Armement;
 			drop table if exists " . $wpdb->prefix . "mjdr_Equipement;
-			*/
+			drop table if exists " . $wpdb->prefix . "mjdr_Groupe;
+			drop table if exists " . $wpdb->prefix . "mjdr_Personnage;";
 		$wpdb->query($createQuery);
 	}
 }

@@ -6,6 +6,7 @@ function mjdr_formCreationPersonnage()
 	$html = ob_get_clean();
 	return $html;
 }
+
 function mjdr_listerPersonnages() {
 	ob_start();
 	if (isset($_GET["idJoueur"]) && is_numeric(trim($_GET["idJoueur"])))
