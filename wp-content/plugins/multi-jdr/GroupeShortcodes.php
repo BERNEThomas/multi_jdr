@@ -48,10 +48,11 @@ function mjdr_listerGroupe() {
 function mjdr_affichageGroupe() {
 	$enr = new Enregistrement();
 	$enr->readByJoueur(um_profile_id());
-	if(!empty($enr)){
+	$html = "";
+	if(!empty($enr->idGroupe)){
 		$groupe = new Groupe();
 		$groupe->read($enr->idGroupe);
-		$html = "<div class='box-multi_jdr'><h1 class='box-multi_jdr-titre1'>Liste des membres : " . $groupe->nom . "</h1>";
+		$html .= "<div class='box-multi_jdr'><h1 class='box-multi_jdr-titre'>Liste des membres : " . $groupe->nom . "</h1>";
 		$html .= "<table>";
 		ob_start();
 		foreach (Enregistrement::readByGroupe($groupe->idGroupe) as $enregistrement) {
@@ -61,5 +62,6 @@ function mjdr_affichageGroupe() {
 		$html .= ob_get_clean();
 		$html .= "</table></div>";
 	}
+	else header('Location: liste-des-groupes');
 	return $html;
 }

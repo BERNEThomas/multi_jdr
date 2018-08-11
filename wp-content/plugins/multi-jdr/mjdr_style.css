@@ -1,14 +1,14 @@
     .boton {
         width: 200px;
         height: 50px;
-        margin:auto;
         display: block;
         position: relative;
     }
-    .botontext {
-
+    .flex-row {
+    	display:flex;
+    	flex-direction: row;
     }
-    .boton input {
+    .boton input, .boton button {
 	    background: none;
 	    color: inherit;
 	    border: none;
@@ -167,7 +167,6 @@
 
 /* Style the form */
 #mjdr_slider_regForm {
-	background-color: #ffffff;
 	margin: auto;
 	padding: 40px;
 	width: 100%;
@@ -191,10 +190,12 @@
     box-shadow: 0 0 13px 3px rgba(0,0,0,.5);
     overflow: hidden; 
 }
-.box-multi_jdr-titre1 {
+
+.box-multi_jdr-titre {
 	margin:20px 0 40px 0;
 	color:white;
 }
+
 /* Style the input fields */
 .mjdr-input[type="text"], .mjdr-input[type="password"] {
 	width: 276px;

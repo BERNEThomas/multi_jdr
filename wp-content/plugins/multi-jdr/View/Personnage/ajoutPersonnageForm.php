@@ -1,19 +1,23 @@
 
-<form id="mjdr_slider_regForm" method="POST" action="#mjdr_slider_regForm">
+<form id="mjdr_slider_regForm" method="POST" action="#mjdr_slider_regForm" class="box-multi_jdr">
 
-	<h2>Créer un personnage</h2>
+	<h2 class="box-multi_jdr-titre">Créer un personnage</h2>
 
 	<div class="mjdr_slider_tab">
-		<table class="mjdr_table">
-			<tr class="mjdr_tr">
-				<td class="mjdr_td">
-					<label for="personnage_nom">Nom</label>
-					<input class="mjdr_input" name="personnage_nom" oninput="this.className = ''" maxlength="100">
-				</td>
-			</tr>
-		</table>
+		<input type="text" class="mjdr-input" name="personnage_nom" placeholder="Nom" maxlength="100">
 		<div class="mjdr_caracs_div">
-			<input type="button" value="Générer les caractéristiques" id="genererCaracs">
+			<div class="boton" id="caracs-button">
+				<div class=botontext>
+					<input type="button" value="Générer les caractéristiques" class="genererCaracs">
+				</div>
+				<div class=botontext>
+					<input type="button" value="Générer les caractéristiques" class="genererCaracs">
+				</div>
+				<span class="twist" width="25%"></span>
+				<span class="twist" width="25%"></span>
+				<span class="twist" width="25%"></span>
+				<span class="twist" width="25%"></span>
+			</div>
 			<ul class="mjdr_liste_horizontale">
 				<li>Force</li>
 				<li>Dextérité</li>
@@ -28,11 +32,11 @@
 		
 		<script type="text/javascript">
 			var compteur = 0;
-			jQuery('#genererCaracs').on('click', function() {
+			jQuery('.genererCaracs').on('click', function() {
 				compteur++;
 				jQuery('#sortable').html('');
 				if (compteur == 3)
-					jQuery('#genererCaracs').hide();
+					jQuery('#caracs-button').hide();
 				for (var i = 1; i < 8; i++) {
 					jQuery('#sortable').append(
 						'<li class="ui-state-default mjdr_td_carac" id="carac' + i + '">' +
@@ -59,11 +63,11 @@
 			<tr>
 				<td>
 					<label for="personnage_nom">Nom</label>
-					<input class="mjdr_input" name="personnage_nom" oninput="this.className = ''">
+					<input class="mjdr_input" name="personnage_nom">
 				</td>
 				<td>
 					<label for="Nom">Prénom</label>
-					<input class="mjdr_input" name="personnage_prenom" oninput="this.className = ''">
+					<input class="mjdr_input" name="personnage_prenom">
 				</td>
 			</tr>
 		</table>
@@ -74,11 +78,11 @@
 			<tr>
 				<td>
 					<label for="personnage_nom">Nom</label>
-					<input class="mjdr_input" name="personnage_nom" oninput="this.className = ''">
+					<input class="mjdr_input" name="personnage_nom">
 				</td>
 				<td>
 					<label for="Nom">Prénom</label>
-					<input class="mjdr_input" name="personnage_prenom"s oninput="this.className = ''">
+					<input class="mjdr_input" name="personnage_prenom"s>
 				</td>
 			</tr>
 		</table>
@@ -89,25 +93,49 @@
 			<tr>
 				<td>
 					<label for="personnage_nom">Nom</label>
-					<input class="mjdr_input" name="personnage_nom" oninput="this.className = ''">
+					<input class="mjdr_input" name="personnage_nom">
 				</td>
 				<td>
 					<label for="Nom">Prénom</label>
-					<input class="mjdr_input" name="personnage_prenom"s oninput="this.className = ''">
+					<input class="mjdr_input" name="personnage_prenom"s>
 				</td>
 			</tr>
 		</table>
 	</div>
 
-	<div style="overflow:auto;">
-		<div style="float:right;">
-			<button type="button" id="mjdr_slider_prevBtn" onclick="nextPrev(-1)">Précédent</button>
-			<button type="button" id="mjdr_slider_nextBtn" onclick="nextPrev(1)">Suivant</button>
+	<div style="overflow:none;">
+		<div style="float:right;" class="flex-row">
+			<div class="boton" id="mjdr_slider_prevDiv">
+				<div class=botontext>
+					<button type="button" onclick="nextPrev(-1)">Précédent</button>
+				</div>
+				<div class=botontext>
+					<button type="button" onclick="nextPrev(-1)">Précédent</button>
+				</div>
+				<span class="twist" width="25%"></span>
+				<span class="twist" width="25%"></span>
+				<span class="twist" width="25%"></span>
+				<span class="twist" width="25%"></span>
+			</div>
+			<div class="boton" id="mjdr_slider_nextDiv">
+				<div class=botontext>
+					<button type="button" class="mjdr_slider_nextBtn" onclick="nextPrev(1)">Suivant</button>
+				</div>
+				<div class=botontext>
+					<button type="button" class="mjdr_slider_nextBtn" onclick="nextPrev(1)">Suivant</button>
+				</div>
+				<span class="twist" width="25%"></span>
+				<span class="twist" width="25%"></span>
+				<span class="twist" width="25%"></span>
+				<span class="twist" width="25%"></span>
+			</div>
+			
+			
 		</div>
 	</div>
 
 	<!-- Circles which indicates the steps of the form: -->
-	<div style="text-align:center;margin-top:40px;">
+	<div style="text-align:center;margin-top:70px;">
 		<span class="mjdr_slider_step"></span>
 		<span class="mjdr_slider_step"></span>
 		<span class="mjdr_slider_step"></span>
@@ -125,14 +153,14 @@
 		x[n].style.display = "block";
 		// ... and fix the Previous/Next buttons:
 		if (n == 0) {
-			document.getElementById("mjdr_slider_prevBtn").style.display = "none";
+			document.getElementById("mjdr_slider_prevDiv").style.display = "none";
 		} else {
-			document.getElementById("mjdr_slider_prevBtn").style.display = "inline";
+			document.getElementById("mjdr_slider_prevDiv").style.display = "inline";
 		}
 		if (n == (x.length - 1)) {
-			document.getElementById("mjdr_slider_nextBtn").innerHTML = "Envoyer";
+			$(".mjdr_slider_nextBtn").innerHTML = "Envoyer";
 		} else {
-			document.getElementById("mjdr_slider_nextBtn").innerHTML = "Suivant";
+			$(".mjdr_slider_nextBtn").innerHTML = "Suivant";
 		}
 		// ... and run a function that displays the correct step indicator:
 		fixStepIndicator(n)
