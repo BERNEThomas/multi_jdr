@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WP Super Cache - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2018-08-10 15:52:13+0000\n"
+"PO-Revision-Date: 2018-08-11 19:22:53+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1532,6 +1532,10 @@ msgstr "Parece ser que has instalado WordPress en un subdirectorio como se descr
 #: wp-cache.php:450
 msgid ".htaccess file may need to be moved"
 msgstr "Podría ser necesario mover el archivo .htaccess "
+
+#: wp-cache.php:431
+msgid "The following Apache modules are missing. The plugin will work in simple mode without them but in expert mode, your visitors may see corrupted pages or out of date content however."
+msgstr "Faltan los siguientes módulos de Apache. El plugin funcionará en modo simple sin ellos, sin embargo, en el modo experto, tus visitantes podrían ver páginas corruptas o contenido sin actualizar."
 
 #: wp-cache.php:430
 msgid "Missing Apache Modules"
