@@ -192,6 +192,7 @@
 		y = x[currentTab].getElementsByTagName("input");
 		// A loop that checks every input field in the current tab:
 		for (i = 0; i < y.length; i++) {
+			y[i].classList.remove("mystyle");
 			// If a field is empty...
 			if (y[i].value == "") {
 				// add an "invalid" class to the field:

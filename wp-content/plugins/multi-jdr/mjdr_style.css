@@ -216,9 +216,9 @@
 }
 /* Mark input boxes that gets an error on validation: */
 input.mjdr_slider_invalid {
-	background-color: #ffdddd;
+	border: 1px solid rgb(255,0,0) !important;
+	background-color: #ffdddd !important;
 }
-
 /* Hide all steps by default: */
 .mjdr_slider_tab {
 	display: none;
